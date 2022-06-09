@@ -1,0 +1,86 @@
+.table{
+  height: 100vh;
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  border-bottom: 1px solid $border_color;
+
+  &__info{
+    @extend %flex_center;
+    @extend %bg_green;
+    font-size: .9rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 0;
+
+    &_empty{
+      background-color: #fff;
+    }
+  }
+
+  &__data{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.col{
+  @extend %flex_center;
+  padding: 5px;
+  border: 1px solid $border_color;
+  border-bottom: none;
+  min-width: 100px;
+}
+
+.cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2px;
+  padding: 10px 2px;
+  min-width: 100px;
+}
+
+.task{
+  @extend %flex_center;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 5px;
+  font-size: rem(14);
+  word-break: break-all;
+  position: relative;
+
+  &:after{
+    content: attr(data-info);
+    position: absolute;
+    top: -5px;
+    left: 0;
+    visibility: hidden;
+    background-color: $title_color;
+    padding: 5px 2px;
+    border-radius: 2px;
+  }
+
+  &:hover:after{
+    visibility: visible;
+  }
+
+  &_done{
+    @extend %bg_green;
+  }
+
+  &_expired{
+    background-color: #d9534f;
+    color: #fff;
+  }
+}

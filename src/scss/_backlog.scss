@@ -1,0 +1,41 @@
+.backlog{
+  padding: 20px 10px;
+  background: #f0f0f0;
+  @media (max-width: $tab){
+    display: none;
+  }
+
+  &__title{
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: $title_color;
+    margin-bottom: 20px;
+  }
+
+  &__item{
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    user-select: none;
+    cursor: all-scroll;
+
+    &_hidden{
+      display: none;
+    }
+  }
+
+  &__name{
+    font-weight: 600;
+    color: #6f99af;
+    margin-bottom: 6px;
+  }
+
+  &__text{
+    span{
+      font-size: .7em;
+      color: $border_color;
+    }
+  }
+}

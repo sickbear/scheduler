@@ -1,0 +1,22 @@
+$title_color: #323232;
+$bg_green: #5cb85c;
+$border_color: #999;
+
+$tab: 1200px;
+
+%flex_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%bg_green{
+  background-color: $bg_green;
+  color: #fff;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
